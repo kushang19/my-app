@@ -25,11 +25,7 @@ export default function TextForm(props) {
         props.showAlert("Default Text added!", "success");
     }
     const handleCopy = () => {
-        var text = document.getElementById('myBox');
-        console.log(text)
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges(); // removes slection (blue bg) from selected text
+        navigator.clipboard.writeText(text);
         props.showAlert("Copied to clipboard!", "success");
     }
 
@@ -61,7 +57,7 @@ const [text, setText] = useState("")
     </div>
     <div className="container my-3" style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
         <h1>Your Text Summery</h1>
-        <p>{text.split(" ").filter((el) => {return el.length !== 0} ).length} words and {text.length} characters</p>
+        <p>{text.split(/\s+/).filter((el) => {return el.length !== 0} ).length} words and {text.length} characters</p>
         <p>{0.008 * text.split(" ").filter((el) => {return el.length !== 0} ).length} Minutes read </p>
         <h3>Preview</h3>
         <p>{text.length > 0 ? text : 'Enter text in above textbox'}</p>

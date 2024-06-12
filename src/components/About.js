@@ -9,7 +9,8 @@ export default function About(props) {
 
     let myStyle = {
         color: props.mode === 'light' ? '#042743' : 'white',
-        backgroundColor: props.mode === 'light' ? 'white' : '#042743' 
+        backgroundColor: props.mode === 'light' ? 'white' : '#042743',
+
     }
 
   return (
@@ -18,7 +19,7 @@ export default function About(props) {
             <div className="accordion" id="accordionExample" style={myStyle}>
         <div className="accordion-item">
             <h2 className="accordion-header">
-            <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button className="accordion-button" style={myStyle}  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Accordion Item #1
             </button>
             </h2>
